@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { PatientInfo } from '../types/patientInfo';
 
 export function PatienteCard({ patient }: { patient: PatientInfo }) {
-	const [isModal, setIsModal] = useState(false);
+	const [activeModal, setActiveModal] = useState(false);
 
 	const handleModal = () => {
-		setIsModal(!isModal);
+		setActiveModal(!activeModal);
 	};
 
-	const active = isModal ? 'is-active' : '';
+	const active = activeModal ? 'is-active' : '';
 
 	return (
 		<div className="cell">
@@ -28,7 +28,7 @@ export function PatienteCard({ patient }: { patient: PatientInfo }) {
 						<div className="media-content">
 							<p className="title is-5 mb-1">{patient.name}</p>
 							<p className="title is-6 mb-2">{patient.age} años</p>
-							<p className="subtitle is-6">Diagnostico: {patient.diagnosis}</p>
+							<p className="subtitle is-6">Diagnóstico: {patient.diagnosis}</p>
 						</div>
 					</div>
 					<div className="content">
